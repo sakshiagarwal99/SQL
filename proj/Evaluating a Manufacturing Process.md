@@ -7,6 +7,7 @@ For this project, you're supporting a team that wants to improve the way they're
 This acceptable range is defined by an upper control limit (UCL) and a lower control limit (LCL), the formulas for which are:
 
 ucl = avg_height + 3 * (stddev_height/√5)
+
 lcl = avg_height - 3 * (stddev_height/√5)
 
 Using SQL window functions, you'll analyze historical manufacturing data to define this acceptable range and identify any points in the process that fall outside of the range and therefore require adjustments. This will ensure a smooth running manufacturing process consistently making high-quality products.
@@ -37,7 +38,7 @@ Note: Please also ensure that you do not change the names of the DataFrames that
 
 SOLUTION
 
-
+```
 SELECT b.**,
        CASE
             WHEN b.height NOT BETWEEN b.lcl AND b.ucl THEN TRUE
@@ -64,3 +65,4 @@ FROM (
                        ) AS a
          WHERE a.row_number >= 5
           ) AS b
+```
