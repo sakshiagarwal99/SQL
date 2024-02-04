@@ -36,7 +36,7 @@ Note: Please also ensure that you do not change the names of the DataFrames that
 
 3. Creating an alert to evaluate the manufacturing process
 
-SOLUTION
+**SOLUTION**
 
 ```
 SELECT b.**,
@@ -64,5 +64,5 @@ FROM (
                          )
                        ) AS a
          WHERE a.row_number >= 5
-          ) AS b
+) AS b
 ```
